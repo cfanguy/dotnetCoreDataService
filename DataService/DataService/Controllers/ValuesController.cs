@@ -12,18 +12,19 @@ namespace DataService.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<List<LocationModel>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return LocationList.places;
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<LocationModel> Get(int id)
         {
-            return "value";
+            return LocationList.places[id];
         }
 
+        /*
         // POST api/values
         [HttpPost]
         public void Post([FromBody] string value)
@@ -41,5 +42,6 @@ namespace DataService.Controllers
         public void Delete(int id)
         {
         }
+        */
     }
 }
